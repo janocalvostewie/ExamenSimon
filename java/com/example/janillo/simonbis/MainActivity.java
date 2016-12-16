@@ -7,7 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.Toast;
+
 
 
 public class MainActivity extends AppCompatActivity {
@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
     int vueltaVerificacion = 0;
     public MediaPlayer mpacierto = null;
     public MediaPlayer mpfallo = null;
-    int fallos = 0;
+    public static int fallos = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -132,15 +132,15 @@ public class MainActivity extends AppCompatActivity {
 
         if (vueltaVerificacion >= secuencia.length) {
             toastie();
-        }
-        else{
+
+        } else {
             if (v.getId() == secuencia[vueltaVerificacion]) {
                 mpacierto.start();
                 vueltaVerificacion++;
                 //Verificamos cuantas vueltas ha dado ya
                 //Para que no estalle por la longitud del array de verificación
                 if (vueltaVerificacion >= secuencia.length) {
-                    toastie();
+                 toastie();
                 }
             } else {
                 //Verifica la posición de la secuencia creada con el botón pulsado
@@ -158,18 +158,24 @@ public class MainActivity extends AppCompatActivity {
 
             }
         }
-
-
-
     }
+        //Este método creará una llamada a la segunda activity
+        //y la iniciará
+        public void lanzar(){
+            Intent i = new Intent(this, activityDos.class);
+            startActivity(i);
+        }
+
+
     //Imprime un mensaje dependiendo del resultado de la secuencia introducida
     public void toastie(){
         if (fallos > 0) {
             mpfallo.start();
-            Toast.makeText(this, "Has perdido", Toast.LENGTH_SHORT).show();
+            lanzar();
+            //Toast.makeText(this, "Has perdido", Toast.LENGTH_SHORT).show();
         } else {
             mpacierto.start();
-            Toast.makeText(this, "Has ganado", Toast.LENGTH_SHORT).show();
+            //Toast.makeText(this, "Has ganado", Toast.LENGTH_SHORT).show();
         }
 
     }
