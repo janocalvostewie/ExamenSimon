@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="rojo">#DF0101</color>
+    <color name="azul">#0000FF</color>
+    <color name="verde">#01DF01</color>
+    <color name="amarillo">#FFFF00</color>
+    <color name="grisFondo">#6E6E6E</color>
+    <color name="grisBoton">#E6E6E6</color>
+    <color name="negroMate">#000000</color>
+    <color name="lilaClaro">#D0A9F5</color>
+    <color name="lilaOscuro">#7401DF</color>
+    <color name="rojoClaro">#F5A9A9</color>
+    <color name="azulClaro">#CEECF5</color>
+    <color name="verdeClaro">#CEF6CE</color>
+    <color name="amarilloClaro">#F5F6CE</color>
+</resources>
